@@ -12,10 +12,11 @@ sudo apt-get upgrade
 sudo apt-get -y install openssh-server net-tools nmap
 sudo apt-get -y install tcpdump iptraf-ng wondershaper ifenslave net-tools whois isc-dhcp-server iftop sshfs
 sudo apt-get -y install qemu virt-manager 
-sudo apt-get -y install gdebi synaptic pv curl git pigz rar unrar ntpdate mesa-utils cpufrequtils zip
-sudo apt-get -y install htop iotop powertop lm-sensors hwinfo phoronix-test-suite sysbench
-sudo apt-get -y install dmraid mdadm samba samba-client bcache-tools dislocker dstat smartmontools testdisk 
+sudo apt-get -y install gdebi synaptic pv curl git pigz rar unrar ntpdate cpufrequtils zip
+sudo apt-get -y install htop iotop powertop lm-sensors hwinfo sysbench
+sudo apt-get -y install dmraid mdadm samba samba-client bcache-tools dstat smartmontools testdisk 
 sudo apt-get -y install nodejs npm python python-pip python3 python3-pip  python-dev
+sudo apt-get -y install phoronix-test-suite glmark2 mesa-utils
 
 sudo pip3 install --upgrade pip
 pip3 install jupyter notebook
