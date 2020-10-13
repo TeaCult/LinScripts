@@ -10,10 +10,15 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    en*:
+    id0:
+      match:
+        name: en*
       dhcp4: yes
 
-sudo netplan-apply
+sudo netplan-apply # for test and this session. Also use -d or --debug to see the problem 
+
+echo "ENABLED=1" | sudo tee /etc/default/netplan # for next reboot
+
 ### Install linux 18.04 Desktop 64 bit  |minimal install ###
 #open /etc/apt/sources.list
 #remove # from sources
@@ -44,7 +49,7 @@ sudo apt-get -y install cpufrequtils
 sudo systemctl disable ondemand
 echo 'GOVERNOR="performance"' | sudo tee /etc/default/cpufrequtils
 # REBOOT HERE to see if it is working ?
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor # May - Should not work on virtual machines ...
 
 # System waits network and does not trigger rc.local ...
 systemctl disable systemd-networkd-wait-online.service
@@ -52,14 +57,11 @@ systemctl mask systemd-networkd-wait-online.service
 
 
 # WEBMIN INSTALLATION
-sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+sudo apt-get -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.930_all.deb
 dpkg --install webmin_1.930_all.deb
-install vm-ware tools # optional
 
-
-
-
+# Optional install vm-ware tools or openvm-tools or qemu drivers...
 
 ### MINIMAL GUI for MINI
 #sudo apt-get -y --no-install-recommends install xubuntu-desktop
