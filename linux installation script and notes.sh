@@ -17,7 +17,7 @@ network:
 
 sudo netplan-apply # for test and this session. Also use -d or --debug to see the problem 
 
-echo "ENABLED=1" | sudo tee /etc/default/netplan # for next reboot
+echo "ENABLED=1" | sudo tee /etc/default/netplan # permenantly activating netplan ...
 
 ### Install linux 18.04 Desktop 64 bit  |minimal install ###
 #open /etc/apt/sources.list
