@@ -2,6 +2,18 @@
 # NOTES : 
 # Minimal installation stable - generic - hwe kernel ,Disable autoupdates and sources , never dist-upgrade
 
+sudo loadkeys tr
+sudo dhclient
+
+# Adjust /etc/netplan/01-netcfg.yaml to
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    en*:
+      dhcp4: yes
+
+sudo netplan-apply
 ### Install linux 18.04 Desktop 64 bit  |minimal install ###
 #open /etc/apt/sources.list
 #remove # from sources
@@ -22,7 +34,7 @@ sudo apt-get -y install nodejs npm python python-pip python3 python3-pip  python
 ### For gui version:
 # sudo apt-get -y install phoronix-test-suite glmark2 mesa-utils
 
-sudo pip3 install --upgrade pip
+sudo -H pip3 install --upgrade pip #-H for normal site packages coverage ...
 pip3 install jupyter notebook
 pip3 install ipython
 pip install click request 
@@ -31,6 +43,7 @@ PATH=$PATH:/home/gediz/.local/bin:
 sudo apt-get -y install cpufrequtils
 sudo systemctl disable ondemand
 echo 'GOVERNOR="performance"' | sudo tee /etc/default/cpufrequtils
+# REBOOT HERE to see if it is working ?
 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
 # System waits network and does not trigger rc.local ...
@@ -43,6 +56,9 @@ sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-r
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.930_all.deb
 dpkg --install webmin_1.930_all.deb
 install vm-ware tools # optional
+
+
+
 
 
 ### MINIMAL GUI for MINI
