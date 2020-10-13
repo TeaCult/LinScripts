@@ -10,7 +10,7 @@ sudo apt-get upgrade
 
 # MINI (minimal install cd - sever) AND DESKTOP VERSION
 sudo apt-get -y install openssh-server net-tools nmap
-sudo apt-get -y install tcpdump iptraf-ng wondershaper ifenslave net-tools whois isc-dhcp-server openssh-server sshfs
+sudo apt-get -y install tcpdump iptraf-ng wondershaper ifenslave net-tools whois isc-dhcp-server iftop sshfs
 sudo apt-get -y install qemu virt-manager 
 sudo apt-get -y install gdebi synaptic pv curl git pigz rar unrar ntpdate mesa-utils cpufrequtils zip
 sudo apt-get -y install htop iotop powertop lm-sensors hwinfo phoronix-test-suite sysbench
