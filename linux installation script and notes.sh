@@ -5,8 +5,10 @@
 ### Install linux 18.04 Desktop 64 bit  |minimal install ###
 #open /etc/apt/sources.list
 #remove # from sources
+
 sudo apt-get update
-sudo apt-get upgrade
+### Upgrade only if you need to, otherwise the efi ubu image is stable ...
+#sudo apt-get upgrade
 
 # MINI (minimal install cd - sever) AND DESKTOP VERSION
 sudo apt-get -y install openssh-server net-tools nmap
@@ -16,7 +18,9 @@ sudo apt-get -y install gdebi synaptic pv curl git pigz rar unrar ntpdate cpufre
 sudo apt-get -y install htop iotop powertop lm-sensors hwinfo sysbench
 sudo apt-get -y install dmraid mdadm samba samba-client bcache-tools dstat smartmontools testdisk 
 sudo apt-get -y install nodejs npm python python-pip python3 python3-pip  python-dev
-sudo apt-get -y install phoronix-test-suite glmark2 mesa-utils
+
+### For gui version:
+# sudo apt-get -y install phoronix-test-suite glmark2 mesa-utils
 
 sudo pip3 install --upgrade pip
 pip3 install jupyter notebook
@@ -41,9 +45,9 @@ dpkg --install webmin_1.930_all.deb
 install vm-ware tools # optional
 
 
-# MINIMAL GUI for MINI
-sudo apt-get -y --no-install-recommends install xubuntu-desktop
-sudo apt-get -y install gparted psensor
+### MINIMAL GUI for MINI
+#sudo apt-get -y --no-install-recommends install xubuntu-desktop
+#sudo apt-get -y install gparted psensor
 
 # FOR REMOTE DESKTOP CONNECTIONS 
 
