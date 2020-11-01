@@ -30,7 +30,7 @@ sudo apt-get update
 # MINI (minimal install cd - sever) AND DESKTOP VERSION
 sudo apt-get -y install openssh-server net-tools nmap
 sudo apt-get -y install tcpdump iptraf-ng wondershaper ifenslave net-tools whois isc-dhcp-server iftop sshfs
-sudo apt-get -y install qemu-kvm virt-manager libvirt-bin bridge-utils virtinst
+sudo apt-get -y install qemu-kvm libvirt-bin virt-manager bridge-utils virtins
 sudo apt-get -y install gdebi synaptic pv curl git pigz rar unrar ntpdate cpufrequtils zip
 sudo apt-get -y install htop iotop powertop lm-sensors hwinfo sysbench
 sudo apt-get -y install dmraid mdadm samba samba-client bcache-tools dstat smartmontools testdisk 
